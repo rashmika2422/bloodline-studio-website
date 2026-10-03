@@ -21,7 +21,7 @@ import CinematicSections from "@/components/ui/CinematicSections";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <PageIntro />
       <ScrollProgress />
       <Navbar />
@@ -45,6 +45,6 @@ export default function Home() {
       <StickyBooking />
       <CustomCursor />
       <CinematicSections />
-    </>
+    </main>
   );
 }
