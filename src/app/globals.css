@@ -10,11 +10,10 @@
 * {
   box-sizing: border-box;
 }
-h1, h2, h3, .display, .hero-title, .intro-title, .entry-word, .marquee-track > span, .panel-number {
+h1,h2,h3,.display,.hero-title,.intro-title,.entry-word,.marquee-track>span,.panel-number {
   font-family: var(--font-syne), sans-serif;
-  letter-spacing: -0.04em;
+  letter-spacing: -.04em;
 }
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
@@ -22,9 +21,9 @@ html {
 body {
   background: var(--bg);
   color: #f3f2ed;
-  margin: 0;
   font-family: var(--font-manrope), sans-serif;
   -webkit-font-smoothing: antialiased;
+  margin: 0;
   overflow-x: hidden;
 }
 a {
@@ -272,7 +271,7 @@ button {
   gap: 24px;
 }
 .scroll-cue span {
-  animation: scroll-down 2s infinite;
+  animation: 2s infinite scroll-down;
   display: inline-block;
 }
 .video-control {
@@ -1301,7 +1300,7 @@ button {
 }
 .typing-cursor {
   color: #bab9b1;
-  animation: cursor-blink .9s step-end infinite;
+  animation: .9s step-end infinite cursor-blink;
 }
 @keyframes cursor-blink {
   50% {
@@ -1310,7 +1309,7 @@ button {
 }
 .hero-atmosphere {
   background: radial-gradient(at 80% 20%,#533ac51a,#0000 50%);
-  animation: atmosphere 10s ease-in-out infinite alternate;
+  animation: 10s ease-in-out infinite alternate atmosphere;
   inset: 0;
 }
 .hero-atmosphere,.hero-transition {
@@ -1374,7 +1373,7 @@ button {
 .marquee-track {
   will-change: transform;
   width: max-content;
-  animation: marquee-flow 45s linear infinite;
+  animation: 45s linear infinite marquee-flow;
   display: flex;
 }
 .marquee-track>span {
@@ -1422,9 +1421,6 @@ button {
   margin-top: -60px;
   margin-bottom: -60px;
   position: relative;
-}
-.gradient-transition.blue {
-  background: radial-gradient(#1f2d592e,#0000 68%);
 }
 .experience {
   background: #07070a;
@@ -1891,7 +1887,7 @@ button {
     font-size: 8px;
   }
   .service-detail {
-    animation: detail-reveal .3s ease-out;
+    animation: .3s ease-out detail-reveal;
   }
   .project-view {
     padding: 10px 14px;
@@ -2084,6 +2080,232 @@ section {
     display: inline-flex;
   }
 }
+.hero-noise {
+  color: #e5b74b;
+}
+.hero-noise .typing-text {
+  min-width: 0;
+  min-height: .86em;
+  color: inherit;
+  display: block;
+}
+.hero-noise .typing-cursor {
+  color: inherit;
+}
+.navbar .logo img {
+  width: 110%!important;
+  top: -61px!important;
+  left: -5%!important;
+}
+@media (min-width:768px) and (max-width:1023px) {
+  .navbar .logo img {
+    top: -48px!important;
+  }
+}
+@media (max-width:767px) {
+  .navbar .logo img {
+    top: -47px!important;
+  }
+}
+:root {
+  --studio-violet: #7039c442;
+  --studio-blue: #275bc238;
+  --studio-gold: #e5b74b29;
+}
+body {
+  background: radial-gradient(ellipse at 95% 0%,var(--studio-violet),transparent 45%),#050505;
+}
+.hero-atmosphere {
+  background: radial-gradient(at 85% 20%,#6939ac29,#0000 55%),radial-gradient(at 5% 75%,#244c961a,#0000 50%),radial-gradient(at 65% 95%,#d2a3430f,#0000 45%);
+}
+.intro,.gallery-section,.services,.sound {
+  background: radial-gradient(ellipse at 100% 15%,var(--studio-violet),transparent 55%),radial-gradient(ellipse at 0% 85%,var(--studio-blue),transparent 50%),#050505;
+}
+.experience,.projects {
+  background: radial-gradient(ellipse at 0% 25%,var(--studio-blue),transparent 60%),radial-gradient(ellipse at 100% 80%,var(--studio-violet),transparent 55%),#0a0a0a;
+}
+.services {
+  background: radial-gradient(ellipse at 100% 25%,#842d5029,transparent 55%),radial-gradient(ellipse at 0% 80%,var(--studio-violet),transparent 65%),#080608;
+}
+.sound {
+  background: radial-gradient(at 50% 100%,#3048ac42,#0000 65%),linear-gradient(145deg,#08060d,#050505 65%);
+}
+.booking {
+  background: radial-gradient(at 50% 60%,#cb912f33,#0000 65%),radial-gradient(at 0 0,#612aa638,#0000 55%),radial-gradient(at 100% 100%,#2342912e,#0000 55%),#080706;
+}
+.contact,.footer,.mobile-menu {
+  background: radial-gradient(ellipse at 0% 0%,var(--studio-violet),transparent 60%),radial-gradient(ellipse at 100% 100%,var(--studio-blue),transparent 60%),#080808;
+}
+.marquee {
+  background: linear-gradient(110deg,#21122f,#0b0a0e 50%,#101f35);
+}
+.booking-button,.sticky-booking {
+  color: #15100a;
+  background: linear-gradient(115deg,#f4ebd4,#e6c77f);
+}
+.booking-button:hover {
+  background: linear-gradient(115deg,#fff8e8,#f0d397);
+}
+.gradient-transition {
+  background: radial-gradient(#602f9b4d,#0000 70%);
+}
+.gradient-transition.blue {
+  background: radial-gradient(#274b994d,#0000 70%);
+}
+.editorial-gallery .studio-image:after,.experience-panel .studio-image:after,.project-grid .studio-image:after,.service-detail .studio-image:after,.service-preview .studio-image:after {
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(135deg,#3a53b01f,#0000 38%),linear-gradient(315deg,#7c39a01a,#0000 38%),linear-gradient(#0000 72%,#0505052e);
+  position: absolute;
+  inset: 0;
+}
+.project-grid figure:nth-child(2) .studio-image:after,.editorial-gallery figure:first-child .studio-image:after {
+  background: linear-gradient(135deg,#cd9b3c14,#0000 35%),linear-gradient(315deg,#304b991a,#0000 40%),linear-gradient(#0000 75%,#05050529);
+}
+.media-overlay-shade {
+  background: linear-gradient(120deg,#462d7c29,#0000 50%),linear-gradient(310deg,#22438a1f,#0000 50%),linear-gradient(#05050545,#050505d1 65%,#050505);
+}
+.showreel-content {
+  background: linear-gradient(125deg,#522f8229,#0000 55%),linear-gradient(320deg,#2345891f,#0000 45%);
+}
+@media (max-width:767px) {
+  .hero-atmosphere {
+    animation: none;
+  }
+  .hero-video {
+    width: calc(100% + 8px);
+    height: calc(var(--hero-video-end,65svh) + 4px);
+    object-fit: cover;
+    object-position: center;
+    filter: blur(1.5px);
+    top: -4px;
+    left: -4px;
+    -webkit-mask-image: linear-gradient(#000 0% 60%,#0000 100%);
+    mask-image: linear-gradient(#000 0% 60%,#0000 100%);
+  }
+  .hero-shade {
+    background: linear-gradient(135deg,#42286e2e,#0000 55%),linear-gradient(#05050526,#0505051f 30%,#0505058c 75%,#050505);
+  }
+}
+body {
+  font-family: var(--font-studio), Arial, sans-serif;
+}
+.display,.hero-title,.entry-word,.footer-word,.service-row h3,.experience-track h3,.project-grid h3 {
+  font-family: var(--font-studio), Arial, sans-serif;
+  letter-spacing: -.045em;
+  text-shadow: none;
+  font-weight: 650;
+}
+.display,.intro-title {
+  font-size: clamp(38px,6.2vw,96px);
+  line-height: 1.04;
+}
+.hero-title {
+  font-size: clamp(64px,8.2vw,128px);
+  line-height: 1;
+}
+.hero-title>.hero-line {
+  line-height: 1.02;
+}
+.showreel h2,.media-overlay-copy h2 {
+  font-size: clamp(42px,6.5vw,100px);
+  line-height: 1.04;
+}
+.booking h2 {
+  font-size: clamp(54px,8vw,128px);
+}
+.contact h2 {
+  font-size: clamp(38px,4.8vw,72px);
+}
+.service-row h3 {
+  font-size: clamp(22px,2.6vw,40px);
+}
+.project-grid h3 {
+  font-size: clamp(26px,2.8vw,42px);
+}
+.editorial-gallery .studio-image,.project-grid .studio-image,.experience-panel .studio-image,.service-detail .studio-image {
+  border-radius: 0;
+  -webkit-mask-image: linear-gradient(#0000,#000 4% 93%,#0000);
+  mask-image: linear-gradient(#0000,#000 4% 93%,#0000);
+}
+@media (max-width:767px) {
+  .display,.intro-title {
+    font-size: clamp(32px,9.5vw,52px);
+  }
+  .hero-title {
+    font-size: clamp(36px,11.2vw,58px)!important;
+  }
+  .hero-title>.hero-line:first-child {
+    font-size: inherit;
+    line-height: 1.02;
+  }
+  .showreel h2,.media-overlay-copy h2 {
+    font-size: clamp(34px,10.5vw,56px);
+  }
+  .booking h2 {
+    font-size: clamp(44px,13vw,68px);
+  }
+  .contact h2 {
+    font-size: clamp(34px,10vw,54px);
+  }
+  .service-row h3 {
+    font-size: clamp(20px,5.2vw,28px);
+  }
+  .project-grid h3 {
+    font-size: 28px;
+  }
+}
+@supports ((-webkit-background-clip:text) or (background-clip:text)) {
+  .display:not(.intro-title),.hero-word:not(.hero-noise),.footer-word {
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(155deg,#faf9f3 10%,#e2dfeb 52%,#aaa9bb 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .intro-title .kinetic-line {
+    background-image: linear-gradient(155deg,currentColor 15% 55%,currentColor 100%);
+  }
+  @supports (color:color-mix(in lab, red, red)) {
+    .intro-title .kinetic-line {
+      background-image: linear-gradient(155deg, currentColor 15%, currentColor 55%, color-mix(in srgb, currentColor 75%, #82799e) 100%);
+    }
+  }
+  .intro-title .kinetic-line {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .hero-noise .typing-text>[aria-hidden=true]>span:first-child {
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(135deg,#fff0bd 5%,#e5b74b 55%,#b98836 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+@media (forced-colors:active) {
+  .display,.hero-word,.footer-word,.intro-title .kinetic-line,.hero-noise .typing-text>[aria-hidden=true]>span:first-child {
+    -webkit-text-fill-color: currentColor;
+    background-image: none;
+  }
+}
+.booking h2 {
+  -webkit-text-fill-color: currentColor;
+  background-image: none;
+}
+@supports ((-webkit-background-clip:text) or (background-clip:text)) {
+  .booking h2>[data-reveal] {
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(155deg,#faf9f3 10%,#e2dfeb 52%,#aaa9bb 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+@media (forced-colors:active) {
+  .booking h2>[data-reveal] {
+    -webkit-text-fill-color: currentColor;
+    background-image: none;
+  }
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -2103,6 +2325,11 @@ section {
 @property --tw-skew-y {
   syntax: "*";
   inherits: false;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-blur {
   syntax: "*";
@@ -2157,237 +2384,51 @@ section {
   syntax: "*";
   inherits: false;
 }
-/* Recent headline, logo, and studio lighting refinements. */
-.hero-noise {
-  color: #e5b74b;
-}
-.hero-noise .typing-text {
-  display: block;
-  min-width: 0;
-  min-height: .86em;
-  color: inherit;
-}
-.hero-noise .typing-cursor {
-  color: inherit;
-}
-.navbar .logo img {
-  width: 110% !important;
-  left: -5% !important;
-  top: -61px !important;
-}
-@media (min-width:768px) and (max-width:1023px) {
-  .navbar .logo img {
-    top: -48px !important;
-  }
-}
-@media (max-width:767px) {
-  .navbar .logo img {
-    top: -47px !important;
-  }
-}
-:root {
-  --studio-violet: rgba(112,57,196,.26);
-  --studio-blue: rgba(39,91,194,.22);
-  --studio-gold: rgba(229,183,75,.16);
-}
-body {
-  background: radial-gradient(ellipse at 95% 0%,var(--studio-violet),transparent 45%),#050505;
-}
-.hero-atmosphere {
-  background: radial-gradient(ellipse at 85% 20%,rgba(105,57,172,.16),transparent 55%),radial-gradient(ellipse at 5% 75%,rgba(36,76,150,.1),transparent 50%),radial-gradient(ellipse at 65% 95%,rgba(210,163,67,.06),transparent 45%);
-}
-.intro,.gallery-section,.services,.sound {
-  background: radial-gradient(ellipse at 100% 15%,var(--studio-violet),transparent 55%),radial-gradient(ellipse at 0% 85%,var(--studio-blue),transparent 50%),#050505;
-}
-.experience,.projects {
-  background: radial-gradient(ellipse at 0% 25%,var(--studio-blue),transparent 60%),radial-gradient(ellipse at 100% 80%,var(--studio-violet),transparent 55%),#0a0a0a;
-}
-.services {
-  background: radial-gradient(ellipse at 100% 25%,rgba(132,45,80,.16),transparent 55%),radial-gradient(ellipse at 0% 80%,var(--studio-violet),transparent 65%),#080608;
-}
-.sound {
-  background: radial-gradient(ellipse at 50% 100%,rgba(48,72,172,.26),transparent 65%),linear-gradient(145deg,#08060d,#050505 65%);
-}
-.booking {
-  background: radial-gradient(ellipse at 50% 60%,rgba(203,145,47,.2),transparent 65%),radial-gradient(ellipse at 0% 0%,rgba(97,42,166,.22),transparent 55%),radial-gradient(ellipse at 100% 100%,rgba(35,66,145,.18),transparent 55%),#080706;
-}
-.contact,.footer,.mobile-menu {
-  background: radial-gradient(ellipse at 0% 0%,var(--studio-violet),transparent 60%),radial-gradient(ellipse at 100% 100%,var(--studio-blue),transparent 60%),#080808;
-}
-.marquee {
-  background: linear-gradient(110deg,#21122f,#0b0a0e 50%,#101f35);
-}
-.booking-button,.sticky-booking {
-  background: linear-gradient(115deg,#f4ebd4,#e6c77f);
-  color: #15100a;
-}
-.booking-button:hover {
-  background: linear-gradient(115deg,#fff8e8,#f0d397);
-}
-.gradient-transition {
-  background: radial-gradient(ellipse at center,rgba(96,47,155,.3),transparent 70%);
-}
-.gradient-transition.blue {
-  background: radial-gradient(ellipse at center,rgba(39,75,153,.3),transparent 70%);
-}
-.editorial-gallery .studio-image::after,.experience-panel .studio-image::after,.project-grid .studio-image::after,.service-detail .studio-image::after,.service-preview .studio-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(135deg,rgba(58,83,176,.12),transparent 38%),linear-gradient(315deg,rgba(124,57,160,.1),transparent 38%),linear-gradient(0deg,rgba(5,5,5,.18),transparent 28%);
-}
-.project-grid figure:nth-child(2) .studio-image::after,.editorial-gallery figure:first-child .studio-image::after {
-  background: linear-gradient(135deg,rgba(205,155,60,.08),transparent 35%),linear-gradient(315deg,rgba(48,75,153,.1),transparent 40%),linear-gradient(0deg,rgba(5,5,5,.16),transparent 25%);
-}
-.media-overlay-shade {
-  background: linear-gradient(120deg,rgba(70,45,124,.16),transparent 50%),linear-gradient(310deg,rgba(34,67,138,.12),transparent 50%),linear-gradient(180deg,rgba(5,5,5,.27),rgba(5,5,5,.82) 65%,#050505);
-}
-.showreel-content {
-  background: linear-gradient(125deg,rgba(82,47,130,.16),transparent 55%),linear-gradient(320deg,rgba(35,69,137,.12),transparent 45%);
-}
-@media (max-width:767px) {
-  .hero-atmosphere {
-    animation: none;
-  }
-  .hero-video {
-    top: -4px;
-    left: -4px;
-    width: calc(100% + 8px);
-    height: calc(var(--hero-video-end,65svh) + 4px);
-    object-fit: cover;
-    object-position: center;
-    filter: blur(1.5px);
-    -webkit-mask-image: linear-gradient(to bottom,#000 0%,#000 60%,transparent 100%);
-    mask-image: linear-gradient(to bottom,#000 0%,#000 60%,transparent 100%);
-  }
-  .hero-shade {
-    background: linear-gradient(135deg,rgba(66,40,110,.18),transparent 55%),linear-gradient(180deg,rgba(5,5,5,.15),rgba(5,5,5,.12) 30%,rgba(5,5,5,.55) 75%,#050505);
-  }
-}
-
-/* A cleaner, more restrained typographic scale. */
-body {
-  font-family: var(--font-studio), Arial, sans-serif;
-}
-.display, .hero-title, .entry-word, .footer-word,
-.service-row h3, .experience-track h3, .project-grid h3 {
-  font-family: var(--font-studio), Arial, sans-serif;
-  font-weight: 650;
-  letter-spacing: -.045em;
-  text-shadow: none;
-}
-.display, .intro-title {
-  font-size: clamp(38px, 6.2vw, 96px);
-  line-height: 1.04;
-}
-.hero-title {
-  font-size: clamp(64px, 8.2vw, 128px);
-  line-height: 1;
-}
-.hero-title > .hero-line {
-  line-height: 1.02;
-}
-.showreel h2, .media-overlay-copy h2 {
-  font-size: clamp(42px, 6.5vw, 100px);
-  line-height: 1.04;
-}
-.booking h2 {
-  font-size: clamp(54px, 8vw, 128px);
-}
-.contact h2 {
-  font-size: clamp(38px, 4.8vw, 72px);
-}
-.service-row h3 {
-  font-size: clamp(22px, 2.6vw, 40px);
-}
-.project-grid h3 {
-  font-size: clamp(26px, 2.8vw, 42px);
-}
-/* Short edge fades reveal the actual background rather than a solid border. */
-.editorial-gallery .studio-image,
-.project-grid .studio-image,
-.experience-panel .studio-image,
-.service-detail .studio-image {
-  border-radius: 0;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 4%, #000 93%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, #000 4%, #000 93%, transparent);
-}
-@media (max-width: 767px) {
-  .display, .intro-title {
-    font-size: clamp(32px, 9.5vw, 52px);
-  }
-  .hero-title {
-    font-size: clamp(36px, 11.2vw, 58px) !important;
-  }
-  .hero-title > .hero-line:first-child {
-    font-size: inherit;
-    line-height: 1.02;
-  }
-  .showreel h2, .media-overlay-copy h2 {
-    font-size: clamp(34px, 10.5vw, 56px);
-  }
-  .booking h2 {
-    font-size: clamp(44px, 13vw, 68px);
-  }
-  .contact h2 {
-    font-size: clamp(34px, 10vw, 54px);
-  }
-  .service-row h3 {
-    font-size: clamp(20px, 5.2vw, 28px);
-  }
-  .project-grid h3 {
-    font-size: 28px;
-  }
-}
-
-/* Soft metallic lettering echoes the surrounding studio lighting. */
-@supports ((background-clip: text) or (-webkit-background-clip: text)) {
-  .display:not(.intro-title),
-  .hero-word:not(.hero-noise),
-  .footer-word {
-    background-image: linear-gradient(155deg, #faf9f3 10%, #e2dfeb 52%, #aaa9bb 100%);
+/* Apply metallic text gradients directly to animated lines. */
+@supports ((background-clip:text) or (-webkit-background-clip:text)) {
+  .display:not(.intro-title),.hero-word:not(.hero-noise),.footer-word {
+    background-image: linear-gradient(155deg,#faf9f3 10%,#e2dfeb 52%,#aaa9bb 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .intro-title .kinetic-line {
-    background-image: linear-gradient(155deg, currentColor 15%, currentColor 55%, color-mix(in srgb, currentColor 75%, #82799e) 100%);
+    background-image: linear-gradient(155deg,currentColor 15%,currentColor 55%,color-mix(in srgb,currentColor 75%,#82799e) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .hero-noise .typing-text > [aria-hidden="true"] > span:first-child {
-    background-image: linear-gradient(135deg, #fff0bd 5%, #e5b74b 55%, #b98836 100%);
+    background-image: linear-gradient(135deg,#fff0bd 5%,#e5b74b 55%,#b98836 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .booking h2 {
+    background-image: none;
+    -webkit-text-fill-color: currentColor;
+  }
+  .booking h2 > [data-reveal] {
+    background-image: linear-gradient(155deg,#faf9f3 10%,#e2dfeb 52%,#aaa9bb 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
-@media (forced-colors: active) {
-  .display, .hero-word, .footer-word, .intro-title .kinetic-line,
-  .hero-noise .typing-text > [aria-hidden="true"] > span:first-child {
+@media (forced-colors:active) {
+  .display,.hero-word,.footer-word,.intro-title .kinetic-line,.booking h2 > [data-reveal],
+ .hero-noise .typing-text > [aria-hidden="true"] > span:first-child {
     background-image: none;
     -webkit-text-fill-color: currentColor;
   }
 }
-
-/* Animated booking lines need their own text gradient when composited by GSAP. */
-.booking h2 {
-  background-image: none;
-  -webkit-text-fill-color: currentColor;
-}
-@supports ((background-clip: text) or (-webkit-background-clip: text)) {
-  .booking h2 > [data-reveal] {
-    background-image: linear-gradient(155deg, #faf9f3 10%, #e2dfeb 52%, #aaa9bb 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-@media (forced-colors: active) {
-  .booking h2 > [data-reveal] {
-    background-image: none;
-    -webkit-text-fill-color: currentColor;
-  }
+.showreel-preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(.55);
+  pointer-events: none;
 }

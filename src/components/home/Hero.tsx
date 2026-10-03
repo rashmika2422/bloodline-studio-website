@@ -83,9 +83,9 @@ export default function Hero() {
         <span className="hero-line"><span className="hero-word">MAKE SOME</span></span>
         <span className="hero-line"><span className="hero-word hero-noise"><TypingText phrases={["NOISE."]} typingSpeed={130} deletingSpeed={80} pauseDuration={2200} /></span></span>
       </h1>
-      <div className="hero-actions"><MagneticButton href="#contact">Book a session <span>↗</span></MagneticButton><a className="text-link" href="#studio">Explore studio <span>↓</span></a><p>A space for your sound.<br />A place to make it yours.</p></div>
+      <div className="hero-actions"><MagneticButton href="#contact">Book a session <span>↗︎</span></MagneticButton><a className="text-link" href="#studio">Explore studio <span>↓︎</span></a><p>A space for your sound.<br />A place to make it yours.</p></div>
     </div></div>
     <div className="hero-side-note eyebrow" aria-hidden="true">Sound without compromise / Vol. 01</div>
-    <div className="hero-bottom"><span>Independent sound. Infinite possibilities.</span><a href="#studio" className="scroll-cue">Scroll to feel it <span>↓</span></a><button className="video-control" onClick={() => { const element = video.current; if (!element) return; if (!element.paused) { element.dataset.paused = "true"; element.pause(); } else { element.dataset.paused = "false"; void element.play().catch(() => {}); } }}>{paused ? "Play" : "Pause"} background</button></div>
+    <div className="hero-bottom"><span>Independent sound. Infinite possibilities.</span><a href="#studio" className="scroll-cue">Scroll to feel it <span>↓︎</span></a><button className="video-control" onClick={() => { const element = video.current; if (!element) return; if (!element.paused) { element.dataset.paused = "true"; element.pause(); } else { element.dataset.paused = "false"; void element.play().catch(() => {}); } }}>{paused ? "Play" : "Pause"} background</button></div>
   </section>;
 }

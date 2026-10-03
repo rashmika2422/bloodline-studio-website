@@ -26,5 +26,5 @@ export default function StickyBooking() {
     update();
     return () => observer.disconnect();
   }, []);
-  return <a ref={ref} href="#contact" className="sticky-booking is-hidden" tabIndex={-1} aria-hidden="true">Book a session <span>↗</span></a>;
+  return <a ref={ref} href="#contact" className="sticky-booking is-hidden" tabIndex={-1} aria-hidden="true">Book a session <span>↗︎</span></a>;
 }
