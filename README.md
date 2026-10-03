@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bloodline Studio
 
-## Getting Started
+A responsive Next.js studio website using the supplied photographs and videos, GSAP/ScrollTrigger and Motion.
 
-First, run the development server:
+## Run
 
-```bash
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If your environment blocks Turbopack's local worker port, use `npm run build -- --webpack`. No remote fonts or image providers are required.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Before launch
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edit `src/lib/studio.ts` with the real email, phone, WhatsApp number (international digits only), and full Instagram/YouTube/TikTok URLs. Blank values display clear coming-soon labels. The form does not submit to a server: when email is configured it prepares an enquiry in the visitor's email app. Add a backend if direct online submission is needed.
 
-## Learn More
+The sound showcase is deliberately visual only. Add real audio assets and an accessible player when recordings are ready. Session images are presented as a journal without invented artist names or release credits.
 
-To learn more about Next.js, take a look at the following resources:
+The hero uses `studio03.mp4` on both mobile and desktop. The showreel loads `studio04.mp4` only when opened. Original assets are preserved.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Verification
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Production compilation, TypeScript and ESLint pass. Browser checks cover widths 390, 430, 768, 1024, 1280, 1440 and 1728px, menu Escape/focus behavior, showreel and session photo dialogs, service expansion, horizontal keyboard controls, booking visibility and reduced motion. The existing development server is also verified. Default Turbopack builds hit a sandbox worker-port restriction here; production compilation succeeds with the Webpack command above.
 
-## Deploy on Vercel
+## Motion system
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+GSAP handles masked hero lines, scroll-driven type color, image masks, gallery parallax, desktop horizontal pinning and layered media transitions. Motion handles menus, dialogs and the major magnetic controls. The typing component uses a small local timer, and the single marquee uses CSS animation with a pause control.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pointer tracking, custom cursor labels, ambient glow, drag-to-scroll and magnetic motion are enabled only on large screens with a fine pointer. Mobile uses native horizontal swipes, expandable service rows and a safe-area booking pill that appears after the hero and hides near contact/footer.
+
+Reduced motion disables the intro, type loop, parallax, pinning, ambient motion and cursor. Typing, marquee and hero video pause off-screen; hidden tabs pause typing/video. All GSAP media contexts and native event listeners clean up when their components unmount. No new animation libraries were added.
